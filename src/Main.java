@@ -43,6 +43,13 @@ public class Main
 		UIManager.put("Menu.foreground", menuTextColor);
 		UIManager.put("Menu.font", menuBarFont);
 
+		UIManager.put("MenuItem.background", menuBarBackground);
+		UIManager.put("MenuItem.font", menuBarFont);
+		UIManager.put("MenuItem.border", BorderFactory.createLineBorder(menuBarBorderColor));
+		UIManager.put("MenuItem.foreground", menuTextColor);
+
+		UIManager.put("PopupMenu.border", BorderFactory.createLineBorder(menuBarBorderColor));
+
 		JMenu register = new JMenu("Register");
 		JMenu userMenu = new JMenu("User");
 		JMenu adminMenu = new JMenu("Admin");
@@ -51,6 +58,19 @@ public class Main
 		menuBar.add(register);
 		menuBar.add(userMenu);
 		menuBar.add(adminMenu);
+
+		// User Log-in menu
+		JMenuItem userLogIn = new JMenuItem("Log-in User");
+
+		// Admin Log-in menu
+		JMenuItem adminLogIn = new JMenuItem("Admin Log-in");
+
+		// Add log-in submenus
+		userMenu.add(userLogIn);
+		adminMenu.add(adminLogIn);
+
+		// Sell Menu & Submenus
+		JMenu sellMenu = new JMenu("Sell Menu");
 
 		// JFrame initialization
 		JFrame frame = new JFrame("Jojo's Bizarre Shopping App");
